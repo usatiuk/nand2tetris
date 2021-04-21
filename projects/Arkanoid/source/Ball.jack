@@ -1,0 +1,104 @@
+class Ball {
+    field int x,y, r, hspeed, vspeed;
+
+    constructor Ball new(int lx, int ly, int lr, int lhspeed, int lvspeed) {
+        let x = lx;
+        let y = ly;
+        let r = lr;
+
+        let hspeed = lhspeed;
+        let vspeed = lvspeed;
+
+        return this;
+    }
+
+    method void setPos(int lx, int ly) {
+        do erase();
+
+        let x = lx;
+        let y = ly;
+
+        return;
+    }
+
+    method void setSpeed(int lhspeed, int lvspeed) {
+        let hspeed = lhspeed;
+        let vspeed = lvspeed;
+
+        return;
+    }
+
+    method void draw() {
+        do Screen.setColor(true);
+        do Screen.drawCircle(x,y,r);
+        return;
+    }
+
+    method void erase() {
+        do Screen.setColor(false);
+        do Screen.drawCircle(x,y,r);
+        return;
+    }
+
+    method void update() {
+        var int keyPressed, bLeft, bRight, bTop, bBottom;
+
+        let bLeft = getLeft();
+        let bRight = getRight();
+        let bTop = getTop();
+        let bBottom = getBottom();
+
+        do erase();
+
+        // 2 pixel margin on the sides just in case
+        if (bLeft < 2 & hspeed < 0) {
+            do invertHspeed();
+        }
+        if (bRight > 508 & hspeed > 0) {
+            do invertHspeed();
+        }
+        if (bTop < 2 & vspeed < 0) {
+            do invertVspeed();
+        }
+        if (bBottom > 250 & vspeed > 0) {
+            do invertVspeed();
+        }
+
+        let x = x + hspeed;
+        let y = y + vspeed;
+
+        do draw();
+
+        return;
+    }
+
+    method void invertVspeed() {
+        let vspeed = -vspeed;
+        return;
+    }
+
+    method void invertHspeed() {
+        let hspeed = -hspeed;
+        return;
+    }
+
+    method int getLeft() {
+        return x - r;
+    }
+
+    method int getRight() {
+        return x + r;
+    }
+
+    method int getTop() {
+        return y - r;
+    }
+
+    method int getBottom() {
+        return y + r;
+    }
+
+    method int getVspeed() {
+        return vspeed;
+    }
+}

@@ -1,0 +1,96 @@
+class Table {
+    field int selX, selY, cellChars, charHeight, charWidth, horCells, verCells, cellWidth, numCells;
+    field Array cellsArr;
+    field String alphabet;
+
+    constructor Table new() {
+        var int i, x, y;
+        var bool stopX, stopY;
+
+        var Cell cell;
+        let cellChars = 5;
+        let charWidth = 8;
+        let charHeight = 11;
+        let horCells = 11;
+        let verCells = 22;
+        let cellWidth = (charWidth * cellChars);
+
+        let numCells = horCells * verCells;
+
+        let cellsArr = Array.new(numCells);
+
+        let stopX = false;
+        let x = 0;
+        let y = 0;
+
+        while (~stopX) {
+            if(y < verCells) {
+                let i = (x * verCells) + y;
+                
+                let cellsArr[i] = Cell.new(x, y, cellChars, i);
+                let cell = cellsArr[i];
+                do cell.draw();
+
+                let y = y + 1;
+            }
+
+            if(y = verCells) {
+                let y = 0;
+                let x = x + 1;
+            }
+
+            if (x = horCells) {
+                let stopX = true;
+            }
+        }
+
+
+        let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        //do drawTable();
+        do printHeader();
+
+        return this;
+    }
+
+    method void drawTable() {
+        var int i;
+
+        let i = 1;
+        while(i < (horCells + 1)) {
+            do Screen.drawLine((i * cellWidth) - 2, 0, (i * cellWidth) - 2, 255);
+            let i = i + 1;
+        }
+
+        let i = 1;
+        while(i < (verCells + 1)) {
+            do Screen.drawLine(0, (i * charHeight) - 1, 511, (i * charHeight) - 1);
+            let i = i + 1;
+        }
+
+        do Screen.drawLine(39, 0, 39, 255);
+        do Screen.drawLine(0, 11, 511, 11);
+
+        return;
+    }
+
+    method void printHeader() {
+        var int i;
+
+        let i = 0;
+        while(i < verCells) {
+            do Output.moveCursor(i + 1, 1);
+            do Output.printInt(i);
+            let i = i + 1;
+        }
+
+        let i = 0;
+        while(i < horCells) {
+            do Output.moveCursor(0, (cellChars * (i + 1)) + 2);
+            do Output.printChar(alphabet.charAt(i));
+            let i = i + 1;
+        }
+
+        return;
+    }
+}

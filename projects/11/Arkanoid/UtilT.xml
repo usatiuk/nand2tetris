@@ -1,0 +1,33 @@
+<tokens>
+<keyword> class </keyword>
+<identifier> Util </identifier>
+<symbol> { </symbol>
+<keyword> function </keyword>
+<keyword> int </keyword>
+<identifier> abs </identifier>
+<symbol> ( </symbol>
+<keyword> int </keyword>
+<identifier> n </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> n </identifier>
+<symbol> &lt; </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> return </keyword>
+<symbol> - </symbol>
+<identifier> n </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> return </keyword>
+<identifier> n </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+</tokens>

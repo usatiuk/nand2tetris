@@ -1,0 +1,14 @@
+function Util.abs 0
+push argument 0
+push constant 0
+lt
+not
+if-goto IF10
+push argument 0
+neg
+return
+goto IF11
+label IF10
+push argument 0
+return
+label IF11

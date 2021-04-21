@@ -1,0 +1,23 @@
+class Cell {
+    field int x, y, width, num, charWidth, charHeight;
+
+    constructor Cell new(int xl, int yl, int widthl, int numl) {
+        let x = xl;
+        let y = yl;
+        let width = widthl;
+        let num = numl;
+
+        let charWidth = 8;
+        let charHeight = 11;
+
+        return this;
+    }
+
+    method void draw() {
+        do Output.moveCursor(y + 1, (x + 1) * width);
+        do Output.printInt(num);
+
+        do Screen.drawLine(charWidth * x, y * charHeight, charWidth * (x + width), y * charHeight);
+        return;
+    }
+}

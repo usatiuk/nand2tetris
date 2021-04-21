@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JackAnalyzer", "JackAnalyzer\JackAnalyzer.csproj", "{358F80E6-7CE3-4EE3-B15F-C1D2B1EB3D67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JackAnalyzerTest", "SymbolTableTest\JackAnalyzerTest.csproj", "{54357789-1274-4FCB-8EEA-80C75EC656CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{358F80E6-7CE3-4EE3-B15F-C1D2B1EB3D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{358F80E6-7CE3-4EE3-B15F-C1D2B1EB3D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{358F80E6-7CE3-4EE3-B15F-C1D2B1EB3D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{358F80E6-7CE3-4EE3-B15F-C1D2B1EB3D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54357789-1274-4FCB-8EEA-80C75EC656CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54357789-1274-4FCB-8EEA-80C75EC656CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54357789-1274-4FCB-8EEA-80C75EC656CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54357789-1274-4FCB-8EEA-80C75EC656CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5BD3FCB-D928-41AD-AD56-948B65966B3A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,54 @@
+<class>
+  <keyword > class </keyword>
+  <identifier class, defined> Main </identifier>
+  <symbol > { </symbol>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> main </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <varDec>
+        <keyword > var </keyword>
+        <identifier > Game </identifier>
+        <identifier name=game type=Game kind=Var index=0 declared> game </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=game type=Game kind=Var index=0 used> game </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> Game </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> new </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> game </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> loop </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <symbol > } </symbol>
+</class>

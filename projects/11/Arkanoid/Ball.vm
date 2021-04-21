@@ -1,0 +1,204 @@
+function Ball.new 0
+push constant 5
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop this 0
+push argument 1
+pop this 1
+push argument 2
+pop this 2
+push argument 3
+pop this 3
+push argument 4
+pop this 4
+push pointer 0
+return
+function Ball.setPos 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Ball.erase 1
+pop temp 0
+push argument 1
+pop this 0
+push argument 2
+pop this 1
+push constant 0
+return
+function Ball.setSpeed 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 3
+push argument 2
+pop this 4
+push constant 0
+return
+function Ball.draw 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push this 2
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+return
+function Ball.erase 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push this 2
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+return
+function Ball.update 5
+push argument 0
+pop pointer 0
+push pointer 0
+call Ball.getLeft 1
+pop local 1
+push pointer 0
+call Ball.getRight 1
+pop local 2
+push pointer 0
+call Ball.getTop 1
+pop local 3
+push pointer 0
+call Ball.getBottom 1
+pop local 4
+push pointer 0
+call Ball.erase 1
+pop temp 0
+push local 1
+push constant 2
+lt
+push this 3
+and
+push constant 0
+lt
+not
+if-goto IF10
+push pointer 0
+call Ball.invertHspeed 1
+pop temp 0
+goto IF11
+label IF10
+label IF11
+push local 2
+push constant 508
+gt
+push this 3
+and
+push constant 0
+gt
+not
+if-goto IF20
+push pointer 0
+call Ball.invertHspeed 1
+pop temp 0
+goto IF21
+label IF20
+label IF21
+push local 3
+push constant 2
+lt
+push this 4
+and
+push constant 0
+lt
+not
+if-goto IF30
+push pointer 0
+call Ball.invertVspeed 1
+pop temp 0
+goto IF31
+label IF30
+label IF31
+push local 4
+push constant 250
+gt
+push this 4
+and
+push constant 0
+gt
+not
+if-goto IF40
+push pointer 0
+call Ball.invertVspeed 1
+pop temp 0
+goto IF41
+label IF40
+label IF41
+push this 0
+push this 3
+add
+pop this 0
+push this 1
+push this 4
+add
+pop this 1
+push pointer 0
+call Ball.draw 1
+pop temp 0
+push constant 0
+return
+function Ball.invertVspeed 0
+push argument 0
+pop pointer 0
+push this 4
+neg
+pop this 4
+push constant 0
+return
+function Ball.invertHspeed 0
+push argument 0
+pop pointer 0
+push this 3
+neg
+pop this 3
+push constant 0
+return
+function Ball.getLeft 0
+push argument 0
+pop pointer 0
+push this 0
+push this 2
+sub
+return
+function Ball.getRight 0
+push argument 0
+pop pointer 0
+push this 0
+push this 2
+add
+return
+function Ball.getTop 0
+push argument 0
+pop pointer 0
+push this 1
+push this 2
+sub
+return
+function Ball.getBottom 0
+push argument 0
+pop pointer 0
+push this 1
+push this 2
+add
+return
+function Ball.getVspeed 0
+push argument 0
+pop pointer 0
+push this 4
+return

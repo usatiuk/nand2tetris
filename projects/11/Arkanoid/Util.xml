@@ -1,0 +1,66 @@
+<class>
+  <keyword > class </keyword>
+  <identifier class, defined> Util </identifier>
+  <symbol > { </symbol>
+  <subroutineDec>
+    <keyword > int </keyword>
+    <identifier subroutine, defined> abs </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+      <keyword > int </keyword>
+      <identifier name=n type=int kind=Arg index=0 declared> n </identifier>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <ifStatement>
+          <keyword > if </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <identifier name=n type=int kind=Arg index=0 used> n </identifier>
+            </term>
+            <symbol > &lt; </symbol>
+            <term>
+              <integerConstant > 0 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <returnStatement>
+              <keyword > return </keyword>
+              <expression>
+                <term>
+                  <symbol > - </symbol>
+                  <term>
+                    <identifier name=n type=int kind=Arg index=0 used> n </identifier>
+                  </term>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </returnStatement>
+          </statements>
+          <symbol > } </symbol>
+          <keyword > else </keyword>
+          <symbol > { </symbol>
+          <statements>
+            <returnStatement>
+              <keyword > return </keyword>
+              <expression>
+                <term>
+                  <identifier name=n type=int kind=Arg index=0 used> n </identifier>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </returnStatement>
+          </statements>
+          <symbol > } </symbol>
+        </ifStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <symbol > } </symbol>
+</class>

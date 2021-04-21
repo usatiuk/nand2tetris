@@ -1,0 +1,587 @@
+<class>
+  <keyword > class </keyword>
+  <identifier class, defined> Bat </identifier>
+  <symbol > { </symbol>
+  <classVarDec>
+    <keyword > field </keyword>
+    <keyword > int </keyword>
+    <identifier name=x type=int kind=Field index=0 declared> x </identifier>
+    <symbol > , </symbol>
+    <identifier name=y type=int kind=Field index=1 declared> y </identifier>
+    <symbol > ; </symbol>
+  </classVarDec>
+  <classVarDec>
+    <keyword > field </keyword>
+    <keyword > int </keyword>
+    <identifier name=width type=int kind=Field index=2 declared> width </identifier>
+    <symbol > , </symbol>
+    <identifier name=height type=int kind=Field index=3 declared> height </identifier>
+    <symbol > ; </symbol>
+  </classVarDec>
+  <classVarDec>
+    <keyword > field </keyword>
+    <keyword > int </keyword>
+    <identifier name=direction type=int kind=Field index=4 declared> direction </identifier>
+    <symbol > ; </symbol>
+  </classVarDec>
+  <subroutineDec>
+    <identifier > Bat </identifier>
+    <identifier subroutine, defined> new </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+      <keyword > int </keyword>
+      <identifier name=Ax type=int kind=Arg index=0 declared> Ax </identifier>
+      <symbol > , </symbol>
+      <keyword > int </keyword>
+      <identifier name=Ay type=int kind=Arg index=1 declared> Ay </identifier>
+      <symbol > , </symbol>
+      <keyword > int </keyword>
+      <identifier name=Awidth type=int kind=Arg index=2 declared> Awidth </identifier>
+      <symbol > , </symbol>
+      <keyword > int </keyword>
+      <identifier name=Aheight type=int kind=Arg index=3 declared> Aheight </identifier>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=x type=int kind=Field index=0 used> x </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=Ax type=int kind=Arg index=0 used> Ax </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=y type=int kind=Field index=1 used> y </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=Ay type=int kind=Arg index=1 used> Ay </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=width type=int kind=Field index=2 used> width </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=Awidth type=int kind=Arg index=2 used> Awidth </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=height type=int kind=Field index=3 used> height </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=Aheight type=int kind=Arg index=3 used> Aheight </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=direction type=int kind=Field index=4 used> direction </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <integerConstant > 2 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier function, used> show </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <expression>
+            <term>
+              <keyword > this </keyword>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> dispose </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> Memory </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> deAlloc </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> show </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> Screen </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> setColor </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier function, used> draw </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> hide </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> Screen </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> setColor </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier function, used> draw </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> draw </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> Screen </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> drawRectangle </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> setDirection </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+      <keyword > int </keyword>
+      <identifier name=Adirection type=int kind=Arg index=1 declared> Adirection </identifier>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=direction type=int kind=Field index=4 used> direction </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=Adirection type=int kind=Arg index=1 used> Adirection </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > int </keyword>
+    <identifier subroutine, defined> getLeft </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <returnStatement>
+          <keyword > return </keyword>
+          <expression>
+            <term>
+              <identifier name=x type=int kind=Field index=0 used> x </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > int </keyword>
+    <identifier subroutine, defined> getRight </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <returnStatement>
+          <keyword > return </keyword>
+          <expression>
+            <term>
+              <identifier name=x type=int kind=Field index=0 used> x </identifier>
+            </term>
+            <symbol > + </symbol>
+            <term>
+              <identifier name=width type=int kind=Field index=2 used> width </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> setWidth </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+      <keyword > int </keyword>
+      <identifier name=Awidth type=int kind=Arg index=1 declared> Awidth </identifier>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier function, used> hide </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=width type=int kind=Field index=2 used> width </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=Awidth type=int kind=Arg index=1 used> Awidth </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier function, used> show </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> move </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <ifStatement>
+          <keyword > if </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <identifier name=direction type=int kind=Field index=4 used> direction </identifier>
+            </term>
+            <symbol > = </symbol>
+            <term>
+              <integerConstant > 1 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=x type=int kind=Field index=0 used> x </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <identifier name=x type=int kind=Field index=0 used> x </identifier>
+                </term>
+                <symbol > - </symbol>
+                <term>
+                  <integerConstant > 4 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <ifStatement>
+              <keyword > if </keyword>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=x type=int kind=Field index=0 used> x </identifier>
+                </term>
+                <symbol > &lt; </symbol>
+                <term>
+                  <integerConstant > 0 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+              <symbol > { </symbol>
+              <statements>
+                <letStatement>
+                  <keyword > let </keyword>
+                  <identifier name=x type=int kind=Field index=0 used> x </identifier>
+                  <symbol > = </symbol>
+                  <expression>
+                    <term>
+                      <integerConstant > 0 </integerConstant>
+                    </term>
+                  </expression>
+                  <symbol > ; </symbol>
+                </letStatement>
+              </statements>
+              <symbol > } </symbol>
+            </ifStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Screen </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> setColor </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Screen </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> drawRectangle </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Screen </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> setColor </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Screen </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> drawRectangle </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol > } </symbol>
+          <keyword > else </keyword>
+          <symbol > { </symbol>
+          <statements>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=x type=int kind=Field index=0 used> x </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <identifier name=x type=int kind=Field index=0 used> x </identifier>
+                </term>
+                <symbol > + </symbol>
+                <term>
+                  <integerConstant > 4 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <ifStatement>
+              <keyword > if </keyword>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <symbol > ( </symbol>
+                  <expression>
+                    <term>
+                      <identifier name=x type=int kind=Field index=0 used> x </identifier>
+                    </term>
+                    <symbol > + </symbol>
+                    <term>
+                      <identifier name=width type=int kind=Field index=2 used> width </identifier>
+                    </term>
+                  </expression>
+                  <symbol > ) </symbol>
+                </term>
+                <symbol > &gt; </symbol>
+                <term>
+                  <integerConstant > 511 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+              <symbol > { </symbol>
+              <statements>
+                <letStatement>
+                  <keyword > let </keyword>
+                  <identifier name=x type=int kind=Field index=0 used> x </identifier>
+                  <symbol > = </symbol>
+                  <expression>
+                    <term>
+                      <integerConstant > 511 </integerConstant>
+                    </term>
+                    <symbol > - </symbol>
+                    <term>
+                      <identifier name=width type=int kind=Field index=2 used> width </identifier>
+                    </term>
+                  </expression>
+                  <symbol > ; </symbol>
+                </letStatement>
+              </statements>
+              <symbol > } </symbol>
+            </ifStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Screen </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> setColor </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Screen </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> drawRectangle </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Screen </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> setColor </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Screen </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> drawRectangle </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol > } </symbol>
+        </ifStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <symbol > } </symbol>
+</class>

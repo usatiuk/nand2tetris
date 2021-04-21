@@ -1,0 +1,7 @@
+class Utils {
+    function int mod(int a, int b) {
+        var int div;
+        let div = Math.divide(a,b);
+        return a - (b*div);
+    }
+}

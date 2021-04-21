@@ -1,0 +1,736 @@
+<class>
+  <keyword > class </keyword>
+  <identifier class, defined> Ball </identifier>
+  <symbol > { </symbol>
+  <classVarDec>
+    <keyword > field </keyword>
+    <keyword > int </keyword>
+    <identifier name=x type=int kind=Field index=0 declared> x </identifier>
+    <symbol > , </symbol>
+    <identifier name=y type=int kind=Field index=1 declared> y </identifier>
+    <symbol > , </symbol>
+    <identifier name=r type=int kind=Field index=2 declared> r </identifier>
+    <symbol > , </symbol>
+    <identifier name=hspeed type=int kind=Field index=3 declared> hspeed </identifier>
+    <symbol > , </symbol>
+    <identifier name=vspeed type=int kind=Field index=4 declared> vspeed </identifier>
+    <symbol > ; </symbol>
+  </classVarDec>
+  <subroutineDec>
+    <identifier > Ball </identifier>
+    <identifier subroutine, defined> new </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+      <keyword > int </keyword>
+      <identifier name=lx type=int kind=Arg index=0 declared> lx </identifier>
+      <symbol > , </symbol>
+      <keyword > int </keyword>
+      <identifier name=ly type=int kind=Arg index=1 declared> ly </identifier>
+      <symbol > , </symbol>
+      <keyword > int </keyword>
+      <identifier name=lr type=int kind=Arg index=2 declared> lr </identifier>
+      <symbol > , </symbol>
+      <keyword > int </keyword>
+      <identifier name=lhspeed type=int kind=Arg index=3 declared> lhspeed </identifier>
+      <symbol > , </symbol>
+      <keyword > int </keyword>
+      <identifier name=lvspeed type=int kind=Arg index=4 declared> lvspeed </identifier>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=x type=int kind=Field index=0 used> x </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=lx type=int kind=Arg index=0 used> lx </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=y type=int kind=Field index=1 used> y </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=ly type=int kind=Arg index=1 used> ly </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=r type=int kind=Field index=2 used> r </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=lr type=int kind=Arg index=2 used> lr </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=hspeed type=int kind=Field index=3 used> hspeed </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=lhspeed type=int kind=Arg index=3 used> lhspeed </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=vspeed type=int kind=Field index=4 used> vspeed </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=lvspeed type=int kind=Arg index=4 used> lvspeed </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <expression>
+            <term>
+              <keyword > this </keyword>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> setPos </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+      <keyword > int </keyword>
+      <identifier name=lx type=int kind=Arg index=1 declared> lx </identifier>
+      <symbol > , </symbol>
+      <keyword > int </keyword>
+      <identifier name=ly type=int kind=Arg index=2 declared> ly </identifier>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier function, used> erase </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=x type=int kind=Field index=0 used> x </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=lx type=int kind=Arg index=1 used> lx </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=y type=int kind=Field index=1 used> y </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=ly type=int kind=Arg index=2 used> ly </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> setSpeed </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+      <keyword > int </keyword>
+      <identifier name=lhspeed type=int kind=Arg index=1 declared> lhspeed </identifier>
+      <symbol > , </symbol>
+      <keyword > int </keyword>
+      <identifier name=lvspeed type=int kind=Arg index=2 declared> lvspeed </identifier>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=hspeed type=int kind=Field index=3 used> hspeed </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=lhspeed type=int kind=Arg index=1 used> lhspeed </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=vspeed type=int kind=Field index=4 used> vspeed </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=lvspeed type=int kind=Arg index=2 used> lvspeed </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> draw </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> Screen </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> setColor </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> Screen </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> drawCircle </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> erase </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> Screen </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> setColor </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> Screen </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> drawCircle </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> update </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=keyPressed type=int kind=Var index=0 declared> keyPressed </identifier>
+        <symbol > , </symbol>
+        <identifier name=bLeft type=int kind=Var index=1 declared> bLeft </identifier>
+        <symbol > , </symbol>
+        <identifier name=bRight type=int kind=Var index=2 declared> bRight </identifier>
+        <symbol > , </symbol>
+        <identifier name=bTop type=int kind=Var index=3 declared> bTop </identifier>
+        <symbol > , </symbol>
+        <identifier name=bBottom type=int kind=Var index=4 declared> bBottom </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bLeft type=int kind=Var index=1 used> bLeft </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier function, used> getLeft </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bRight type=int kind=Var index=2 used> bRight </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier function, used> getRight </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bTop type=int kind=Var index=3 used> bTop </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier function, used> getTop </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bBottom type=int kind=Var index=4 used> bBottom </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier function, used> getBottom </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier function, used> erase </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <ifStatement>
+          <keyword > if </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <identifier name=bLeft type=int kind=Var index=1 used> bLeft </identifier>
+            </term>
+            <symbol > &lt; </symbol>
+            <term>
+              <integerConstant > 2 </integerConstant>
+            </term>
+            <symbol > &amp; </symbol>
+            <term>
+              <identifier name=hspeed type=int kind=Field index=3 used> hspeed </identifier>
+            </term>
+            <symbol > &lt; </symbol>
+            <term>
+              <integerConstant > 0 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier function, used> invertHspeed </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol > } </symbol>
+        </ifStatement>
+        <ifStatement>
+          <keyword > if </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <identifier name=bRight type=int kind=Var index=2 used> bRight </identifier>
+            </term>
+            <symbol > &gt; </symbol>
+            <term>
+              <integerConstant > 508 </integerConstant>
+            </term>
+            <symbol > &amp; </symbol>
+            <term>
+              <identifier name=hspeed type=int kind=Field index=3 used> hspeed </identifier>
+            </term>
+            <symbol > &gt; </symbol>
+            <term>
+              <integerConstant > 0 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier function, used> invertHspeed </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol > } </symbol>
+        </ifStatement>
+        <ifStatement>
+          <keyword > if </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <identifier name=bTop type=int kind=Var index=3 used> bTop </identifier>
+            </term>
+            <symbol > &lt; </symbol>
+            <term>
+              <integerConstant > 2 </integerConstant>
+            </term>
+            <symbol > &amp; </symbol>
+            <term>
+              <identifier name=vspeed type=int kind=Field index=4 used> vspeed </identifier>
+            </term>
+            <symbol > &lt; </symbol>
+            <term>
+              <integerConstant > 0 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier function, used> invertVspeed </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol > } </symbol>
+        </ifStatement>
+        <ifStatement>
+          <keyword > if </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <identifier name=bBottom type=int kind=Var index=4 used> bBottom </identifier>
+            </term>
+            <symbol > &gt; </symbol>
+            <term>
+              <integerConstant > 250 </integerConstant>
+            </term>
+            <symbol > &amp; </symbol>
+            <term>
+              <identifier name=vspeed type=int kind=Field index=4 used> vspeed </identifier>
+            </term>
+            <symbol > &gt; </symbol>
+            <term>
+              <integerConstant > 0 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier function, used> invertVspeed </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol > } </symbol>
+        </ifStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=x type=int kind=Field index=0 used> x </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=x type=int kind=Field index=0 used> x </identifier>
+            </term>
+            <symbol > + </symbol>
+            <term>
+              <identifier name=hspeed type=int kind=Field index=3 used> hspeed </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=y type=int kind=Field index=1 used> y </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=y type=int kind=Field index=1 used> y </identifier>
+            </term>
+            <symbol > + </symbol>
+            <term>
+              <identifier name=vspeed type=int kind=Field index=4 used> vspeed </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier function, used> draw </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> invertVspeed </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=vspeed type=int kind=Field index=4 used> vspeed </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <symbol > - </symbol>
+              <term>
+                <identifier name=vspeed type=int kind=Field index=4 used> vspeed </identifier>
+              </term>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> invertHspeed </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=hspeed type=int kind=Field index=3 used> hspeed </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <symbol > - </symbol>
+              <term>
+                <identifier name=hspeed type=int kind=Field index=3 used> hspeed </identifier>
+              </term>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > int </keyword>
+    <identifier subroutine, defined> getLeft </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <returnStatement>
+          <keyword > return </keyword>
+          <expression>
+            <term>
+              <identifier name=x type=int kind=Field index=0 used> x </identifier>
+            </term>
+            <symbol > - </symbol>
+            <term>
+              <identifier name=r type=int kind=Field index=2 used> r </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > int </keyword>
+    <identifier subroutine, defined> getRight </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <returnStatement>
+          <keyword > return </keyword>
+          <expression>
+            <term>
+              <identifier name=x type=int kind=Field index=0 used> x </identifier>
+            </term>
+            <symbol > + </symbol>
+            <term>
+              <identifier name=r type=int kind=Field index=2 used> r </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > int </keyword>
+    <identifier subroutine, defined> getTop </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <returnStatement>
+          <keyword > return </keyword>
+          <expression>
+            <term>
+              <identifier name=y type=int kind=Field index=1 used> y </identifier>
+            </term>
+            <symbol > - </symbol>
+            <term>
+              <identifier name=r type=int kind=Field index=2 used> r </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > int </keyword>
+    <identifier subroutine, defined> getBottom </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <returnStatement>
+          <keyword > return </keyword>
+          <expression>
+            <term>
+              <identifier name=y type=int kind=Field index=1 used> y </identifier>
+            </term>
+            <symbol > + </symbol>
+            <term>
+              <identifier name=r type=int kind=Field index=2 used> r </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > int </keyword>
+    <identifier subroutine, defined> getVspeed </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <statements>
+        <returnStatement>
+          <keyword > return </keyword>
+          <expression>
+            <term>
+              <identifier name=vspeed type=int kind=Field index=4 used> vspeed </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <symbol > } </symbol>
+</class>

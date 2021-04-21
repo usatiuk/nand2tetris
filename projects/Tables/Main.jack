@@ -1,0 +1,8 @@
+class Main {
+    function void main() {
+        var Table table;
+        let table = Table.new();
+
+        return;
+    }
+}

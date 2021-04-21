@@ -1,0 +1,224 @@
+class Game {
+    field int hbricks, vbricks;
+    field int gameOver;
+
+    field Rect paddle;
+    field Ball ball;
+    field Array bricks;
+
+    constructor Game new() {
+        var int i, j;
+        var Rect curBrick;
+
+        let gameOver = 0;
+        let hbricks = 8;
+        let vbricks = 3;
+        
+        let paddle = Rect.new(250,220,50,10);
+        let ball = Ball.new(250, 200, 6, 1, 1);
+        let bricks = Array.new(hbricks * vbricks);
+
+        while (i < hbricks) {
+            while (j < vbricks) {
+                let bricks[i * 3 + j] = Rect.new(i * 60 + 20, j * 30 + 20, 50, 15);
+                let curBrick = bricks[i * 3 + j];
+                do curBrick.draw();
+                let j = j + 1;
+            }
+            let j = 0;
+            let i = i + 1;
+        }
+
+        return this;
+    }
+
+    method void loop() {
+        var int keyPressed;
+
+        while(true) {
+            // Approximately 60 updates per second
+            do Sys.wait(16);
+
+            if (gameOver = 0) {
+                do movePaddle();
+                do ball.update();
+                do chackBallPaddleCol();
+                do checkBallBricksCol();
+
+                do checkGameOver();
+            }  else {
+                let keyPressed = Keyboard.keyPressed();
+                if (keyPressed = 82) {
+                    do resetGame();
+                }
+            }
+
+        }
+        return;
+    }
+
+    method void resetGame() {
+        var int i, end;
+        var Rect brick;
+
+        do Screen.clearScreen();
+
+        do paddle.setPos(250, 220);
+        do ball.setPos(250, 200);
+        do ball.setSpeed(1, 1);
+        
+        let end = hbricks * vbricks;
+        while (i < end) {
+            let brick = bricks[i];
+
+            do brick.setHidden(0);
+            do brick.draw();
+
+            let i = i + 1;
+        }
+
+        let gameOver = 0;
+
+        return;
+    }
+
+    method void checkGameOver() {
+        var int bBottom;
+
+        let bBottom = ball.getBottom();
+
+        if (bBottom > 240) {
+            let gameOver = 1;
+
+            do Output.moveCursor(0,0);
+            do Output.println();
+            do Output.printString("game over");
+            do Output.println();
+            do Output.printString("press r to restart");
+        }
+
+        return;
+    }
+
+    method void movePaddle() {
+        var int keyPressed, paddleLeft, paddleRight;
+
+        let keyPressed = Keyboard.keyPressed();
+        let paddleLeft = paddle.getLeft();
+        let paddleRight = paddle.getRight();
+        // Move left
+        if((keyPressed = 130) & (paddleLeft > 0)) {
+            do paddle.moveLeft(2);
+        }
+        // Move right
+        if((keyPressed = 132) & (paddleRight < 510)) {
+            do paddle.moveRight(2);
+        }
+        do paddle.draw();
+
+        return;
+    }
+
+    method void chackBallPaddleCol() {
+        var int paddleLeft, paddleRight, paddleTop, paddleBottom, paddleMiddle; 
+        var int bLeft, bRight, bTop, bBottom, bMiddle, bVspeed; 
+
+        let paddleLeft = paddle.getLeft();
+        let paddleRight = paddle.getRight();
+        let paddleTop = paddle.getTop();
+        let paddleBottom = paddle.getBottom();
+        let paddleMiddle = (paddleRight + paddleLeft) / 2;
+
+        let bLeft = ball.getLeft();
+        let bRight = ball.getRight();
+        let bTop = ball.getTop();
+        let bBottom = ball.getBottom();
+        let bMiddle = (bRight + bLeft) / 2;
+        let bVspeed = ball.getVspeed();
+
+        if((bLeft > paddleLeft) & (bRight < paddleRight)) {
+            if((bBottom > paddleTop) & (bVspeed > 0)) {
+                if (bMiddle > paddleMiddle) {
+                    do ball.setSpeed(1, -1);
+                } else {
+                    do ball.setSpeed(-1, -1);
+                }
+            }
+        }
+
+        return;
+    }
+
+    method void checkBallBricksCol() {
+        var int brLeft, brRight, brTop, brBottom, brHidden; 
+        var int bLeft, bRight, bTop, bBottom, bVspeed;
+        var int overlapLeft, overlapRight, overlapTop, overlapBottom, fromLeft, fromTop;
+        var int minOverlapX, minOverlapY;
+        var int i, end;
+        var Rect brick;
+
+        let bLeft = ball.getLeft();
+        let bRight = ball.getRight();
+        let bTop = ball.getTop();
+        let bBottom = ball.getBottom();
+        let bVspeed = ball.getVspeed();
+        
+        let end = hbricks * vbricks;
+        while (i < end) {
+            let brick = bricks[i];
+
+            let brLeft = brick.getLeft();
+            let brRight = brick.getRight();
+            let brTop = brick.getTop();
+            let brBottom = brick.getBottom();
+            let brHidden = brick.getHidden();
+
+            if(brHidden < 1) {
+                do brick.draw();
+
+                // Check if there's intersection at all first
+                if((bLeft > brLeft) & (bRight < brRight)) {
+                    if((bBottom > brTop) & (bTop < brBottom)) {
+                        do brick.setHidden(1);
+                        do brick.draw();
+
+                        // Now calculate the collision side
+                        // Algorithm basically copied from this video
+                        // https://youtu.be/_4K3tsKa1Uc?t=1820
+
+                        let overlapLeft = bRight - brLeft;
+                        let overlapRight = brRight - bLeft;
+                        let overlapTop = bBottom - brTop;
+                        let overlapBottom = brBottom - bTop;
+
+                        if(Util.abs(overlapLeft) < Util.abs(overlapRight)) {
+                            let fromLeft = 1;
+                            let minOverlapX = overlapLeft;
+                        } else {
+                            let minOverlapX = overlapRight;
+                        }
+
+                        if(Util.abs(overlapTop) < Util.abs(overlapBottom)) {
+                            let fromTop = 1;
+                            let minOverlapY = overlapTop;
+                        } else {
+                            let minOverlapY = overlapBottom;
+                        }
+
+                        if(Util.abs(minOverlapX) < Util.abs(minOverlapY)) {
+                            do ball.invertHspeed();
+                        } else {
+                            do ball.invertVspeed();
+                        }
+
+                    }
+                }
+            }
+
+            let i = i + 1;
+        }
+
+        return;
+    }
+
+}

@@ -1,0 +1,90 @@
+class Rect {
+    field int x, y, width, height, hidden;
+
+    constructor Rect new(int xl, int yl, int widthl, int heightl) {
+        let x = xl;
+        let y = yl;
+        let width = widthl;
+        let height = heightl;
+        let hidden = 0;
+
+        return this;
+    }
+
+    method void setPos(int lx, int ly) {
+        do erase();
+        let x = lx;
+        let y = ly;
+
+        return;
+    }
+
+    method void draw() {
+        if (hidden = 1) {
+            do erase();
+            return;
+        }
+        do Screen.setColor(true);
+        do Screen.drawRectangle(x,y,x+width,y+height);
+        return;
+    }
+
+    method void erase() {
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x,y,x+width,y+height);
+        return;
+    }
+
+    method void moveLeft(int dist) {
+        do erase();
+        let x = x - dist;
+        do draw();
+        return;
+    }
+
+    method void moveRight(int dist) {
+        do erase();
+        let x = x + dist;
+        do draw();
+        return;
+    }
+
+    method void moveUp(int dist) {
+        do erase();
+        let y = y - dist;
+        do draw();
+        return;
+    }
+
+    method void moveDown(int dist) {
+        do erase();
+        let y = y + dist;
+        do draw();
+        return;
+    }
+
+    method int getLeft() {
+        return x;
+    }
+
+    method int getRight() {
+        return x + width;
+    }
+
+    method int getTop() {
+        return y;
+    }
+
+    method int getBottom() {
+        return y + height;
+    }
+
+    method int getHidden() {
+        return hidden;
+    }
+
+    method void setHidden(int lhidden) {
+        let hidden = lhidden;
+        return;
+    }
+}

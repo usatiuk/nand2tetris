@@ -1,0 +1,1899 @@
+<class>
+  <keyword > class </keyword>
+  <identifier class, defined> Game </identifier>
+  <symbol > { </symbol>
+  <classVarDec>
+    <keyword > field </keyword>
+    <keyword > int </keyword>
+    <identifier name=hbricks type=int kind=Field index=0 declared> hbricks </identifier>
+    <symbol > , </symbol>
+    <identifier name=vbricks type=int kind=Field index=1 declared> vbricks </identifier>
+    <symbol > ; </symbol>
+  </classVarDec>
+  <classVarDec>
+    <keyword > field </keyword>
+    <keyword > int </keyword>
+    <identifier name=gameOver type=int kind=Field index=2 declared> gameOver </identifier>
+    <symbol > ; </symbol>
+  </classVarDec>
+  <classVarDec>
+    <keyword > field </keyword>
+    <identifier > Rect </identifier>
+    <identifier name=paddle type=Rect kind=Field index=3 declared> paddle </identifier>
+    <symbol > ; </symbol>
+  </classVarDec>
+  <classVarDec>
+    <keyword > field </keyword>
+    <identifier > Ball </identifier>
+    <identifier name=ball type=Ball kind=Field index=4 declared> ball </identifier>
+    <symbol > ; </symbol>
+  </classVarDec>
+  <classVarDec>
+    <keyword > field </keyword>
+    <identifier > Array </identifier>
+    <identifier name=bricks type=Array kind=Field index=5 declared> bricks </identifier>
+    <symbol > ; </symbol>
+  </classVarDec>
+  <subroutineDec>
+    <identifier > Game </identifier>
+    <identifier subroutine, defined> new </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=i type=int kind=Var index=0 declared> i </identifier>
+        <symbol > , </symbol>
+        <identifier name=j type=int kind=Var index=1 declared> j </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <varDec>
+        <keyword > var </keyword>
+        <identifier > Rect </identifier>
+        <identifier name=curBrick type=Rect kind=Var index=2 declared> curBrick </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=gameOver type=int kind=Field index=2 used> gameOver </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <integerConstant > 0 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=hbricks type=int kind=Field index=0 used> hbricks </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <integerConstant > 8 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=vbricks type=int kind=Field index=1 used> vbricks </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <integerConstant > 3 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=paddle type=Rect kind=Field index=3 used> paddle </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> Rect </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> new </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=ball type=Ball kind=Field index=4 used> ball </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> Ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> new </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bricks type=Array kind=Field index=5 used> bricks </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> Array </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> new </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <whileStatement>
+          <keyword > while </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <identifier name=i type=int kind=Var index=0 used> i </identifier>
+            </term>
+            <symbol > &lt; </symbol>
+            <term>
+              <identifier name=hbricks type=int kind=Field index=0 used> hbricks </identifier>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <whileStatement>
+              <keyword > while </keyword>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=j type=int kind=Var index=1 used> j </identifier>
+                </term>
+                <symbol > &lt; </symbol>
+                <term>
+                  <identifier name=vbricks type=int kind=Field index=1 used> vbricks </identifier>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+              <symbol > { </symbol>
+              <statements>
+                <letStatement>
+                  <keyword > let </keyword>
+                  <identifier name=bricks type=Array kind=Field index=5 used> bricks </identifier>
+                  <symbol > [ </symbol>
+                  <expression>
+                    <term>
+                      <identifier name=i type=int kind=Var index=0 used> i </identifier>
+                    </term>
+                    <symbol > * </symbol>
+                    <term>
+                      <integerConstant > 3 </integerConstant>
+                    </term>
+                    <symbol > + </symbol>
+                    <term>
+                      <identifier name=j type=int kind=Var index=1 used> j </identifier>
+                    </term>
+                  </expression>
+                  <symbol > ] </symbol>
+                  <symbol > = </symbol>
+                  <expression>
+                    <term>
+                      <identifier class, used> Rect </identifier>
+                      <symbol > . </symbol>
+                      <identifier function, used> new </identifier>
+                      <symbol > ( </symbol>
+                      <symbol > ) </symbol>
+                    </term>
+                  </expression>
+                  <symbol > ; </symbol>
+                </letStatement>
+                <letStatement>
+                  <keyword > let </keyword>
+                  <identifier name=curBrick type=Rect kind=Var index=2 used> curBrick </identifier>
+                  <symbol > = </symbol>
+                  <expression>
+                    <term>
+                      <symbol > [ </symbol>
+                      <expression>
+                        <term>
+                          <identifier name=i type=int kind=Var index=0 used> i </identifier>
+                        </term>
+                        <symbol > * </symbol>
+                        <term>
+                          <integerConstant > 3 </integerConstant>
+                        </term>
+                        <symbol > + </symbol>
+                        <term>
+                          <identifier name=j type=int kind=Var index=1 used> j </identifier>
+                        </term>
+                      </expression>
+                      <symbol > ] </symbol>
+                    </term>
+                  </expression>
+                  <symbol > ; </symbol>
+                </letStatement>
+                <doStatement>
+                  <keyword > do </keyword>
+                  <identifier class, used> curBrick </identifier>
+                  <symbol > . </symbol>
+                  <identifier function, used> draw </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                  <symbol > ; </symbol>
+                </doStatement>
+                <letStatement>
+                  <keyword > let </keyword>
+                  <identifier name=j type=int kind=Var index=1 used> j </identifier>
+                  <symbol > = </symbol>
+                  <expression>
+                    <term>
+                      <identifier name=j type=int kind=Var index=1 used> j </identifier>
+                    </term>
+                    <symbol > + </symbol>
+                    <term>
+                      <integerConstant > 1 </integerConstant>
+                    </term>
+                  </expression>
+                  <symbol > ; </symbol>
+                </letStatement>
+              </statements>
+              <symbol > } </symbol>
+            </whileStatement>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=j type=int kind=Var index=1 used> j </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <integerConstant > 0 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=i type=int kind=Var index=0 used> i </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <identifier name=i type=int kind=Var index=0 used> i </identifier>
+                </term>
+                <symbol > + </symbol>
+                <term>
+                  <integerConstant > 1 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+          </statements>
+          <symbol > } </symbol>
+        </whileStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <expression>
+            <term>
+              <keyword > this </keyword>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> loop </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=keyPressed type=int kind=Var index=0 declared> keyPressed </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <statements>
+        <whileStatement>
+          <keyword > while </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <keyword > true </keyword>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Sys </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> wait </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <ifStatement>
+              <keyword > if </keyword>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=gameOver type=int kind=Field index=2 used> gameOver </identifier>
+                </term>
+                <symbol > = </symbol>
+                <term>
+                  <integerConstant > 0 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+              <symbol > { </symbol>
+              <statements>
+                <doStatement>
+                  <keyword > do </keyword>
+                  <identifier function, used> movePaddle </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                  <symbol > ; </symbol>
+                </doStatement>
+                <doStatement>
+                  <keyword > do </keyword>
+                  <identifier class, used> ball </identifier>
+                  <symbol > . </symbol>
+                  <identifier function, used> update </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                  <symbol > ; </symbol>
+                </doStatement>
+                <doStatement>
+                  <keyword > do </keyword>
+                  <identifier function, used> chackBallPaddleCol </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                  <symbol > ; </symbol>
+                </doStatement>
+                <doStatement>
+                  <keyword > do </keyword>
+                  <identifier function, used> checkBallBricksCol </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                  <symbol > ; </symbol>
+                </doStatement>
+                <doStatement>
+                  <keyword > do </keyword>
+                  <identifier function, used> checkGameOver </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                  <symbol > ; </symbol>
+                </doStatement>
+              </statements>
+              <symbol > } </symbol>
+              <keyword > else </keyword>
+              <symbol > { </symbol>
+              <statements>
+                <letStatement>
+                  <keyword > let </keyword>
+                  <identifier name=keyPressed type=int kind=Var index=0 used> keyPressed </identifier>
+                  <symbol > = </symbol>
+                  <expression>
+                    <term>
+                      <identifier class, used> Keyboard </identifier>
+                      <symbol > . </symbol>
+                      <identifier function, used> keyPressed </identifier>
+                      <symbol > ( </symbol>
+                      <symbol > ) </symbol>
+                    </term>
+                  </expression>
+                  <symbol > ; </symbol>
+                </letStatement>
+                <ifStatement>
+                  <keyword > if </keyword>
+                  <symbol > ( </symbol>
+                  <expression>
+                    <term>
+                      <identifier name=keyPressed type=int kind=Var index=0 used> keyPressed </identifier>
+                    </term>
+                    <symbol > = </symbol>
+                    <term>
+                      <integerConstant > 82 </integerConstant>
+                    </term>
+                  </expression>
+                  <symbol > ) </symbol>
+                  <symbol > { </symbol>
+                  <statements>
+                    <doStatement>
+                      <keyword > do </keyword>
+                      <identifier function, used> resetGame </identifier>
+                      <symbol > ( </symbol>
+                      <symbol > ) </symbol>
+                      <symbol > ; </symbol>
+                    </doStatement>
+                  </statements>
+                  <symbol > } </symbol>
+                </ifStatement>
+              </statements>
+              <symbol > } </symbol>
+            </ifStatement>
+          </statements>
+          <symbol > } </symbol>
+        </whileStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> resetGame </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=i type=int kind=Var index=0 declared> i </identifier>
+        <symbol > , </symbol>
+        <identifier name=end type=int kind=Var index=1 declared> end </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <varDec>
+        <keyword > var </keyword>
+        <identifier > Rect </identifier>
+        <identifier name=brick type=Rect kind=Var index=2 declared> brick </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <statements>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> Screen </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> clearScreen </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> paddle </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> setPos </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> ball </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> setPos </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> ball </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> setSpeed </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=end type=int kind=Var index=1 used> end </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=hbricks type=int kind=Field index=0 used> hbricks </identifier>
+            </term>
+            <symbol > * </symbol>
+            <term>
+              <identifier name=vbricks type=int kind=Field index=1 used> vbricks </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <whileStatement>
+          <keyword > while </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <identifier name=i type=int kind=Var index=0 used> i </identifier>
+            </term>
+            <symbol > &lt; </symbol>
+            <term>
+              <identifier name=end type=int kind=Var index=1 used> end </identifier>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=brick type=Rect kind=Var index=2 used> brick </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <symbol > [ </symbol>
+                  <expression>
+                    <term>
+                      <identifier name=i type=int kind=Var index=0 used> i </identifier>
+                    </term>
+                  </expression>
+                  <symbol > ] </symbol>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> brick </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> setHidden </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> brick </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> draw </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=i type=int kind=Var index=0 used> i </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <identifier name=i type=int kind=Var index=0 used> i </identifier>
+                </term>
+                <symbol > + </symbol>
+                <term>
+                  <integerConstant > 1 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+          </statements>
+          <symbol > } </symbol>
+        </whileStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=gameOver type=int kind=Field index=2 used> gameOver </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <integerConstant > 0 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> checkGameOver </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=bBottom type=int kind=Var index=0 declared> bBottom </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bBottom type=int kind=Var index=0 used> bBottom </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getBottom </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <ifStatement>
+          <keyword > if </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <identifier name=bBottom type=int kind=Var index=0 used> bBottom </identifier>
+            </term>
+            <symbol > &gt; </symbol>
+            <term>
+              <integerConstant > 240 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=gameOver type=int kind=Field index=2 used> gameOver </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <integerConstant > 1 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Output </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> moveCursor </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Output </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> println </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Output </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> printString </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Output </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> println </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> Output </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> printString </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol > } </symbol>
+        </ifStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> movePaddle </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=keyPressed type=int kind=Var index=0 declared> keyPressed </identifier>
+        <symbol > , </symbol>
+        <identifier name=paddleLeft type=int kind=Var index=1 declared> paddleLeft </identifier>
+        <symbol > , </symbol>
+        <identifier name=paddleRight type=int kind=Var index=2 declared> paddleRight </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=keyPressed type=int kind=Var index=0 used> keyPressed </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> Keyboard </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> keyPressed </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=paddleLeft type=int kind=Var index=1 used> paddleLeft </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> paddle </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getLeft </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=paddleRight type=int kind=Var index=2 used> paddleRight </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> paddle </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getRight </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <ifStatement>
+          <keyword > if </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=keyPressed type=int kind=Var index=0 used> keyPressed </identifier>
+                </term>
+                <symbol > = </symbol>
+                <term>
+                  <integerConstant > 130 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+            </term>
+            <symbol > &amp; </symbol>
+            <term>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=paddleLeft type=int kind=Var index=1 used> paddleLeft </identifier>
+                </term>
+                <symbol > &gt; </symbol>
+                <term>
+                  <integerConstant > 0 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> paddle </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> moveLeft </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol > } </symbol>
+        </ifStatement>
+        <ifStatement>
+          <keyword > if </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=keyPressed type=int kind=Var index=0 used> keyPressed </identifier>
+                </term>
+                <symbol > = </symbol>
+                <term>
+                  <integerConstant > 132 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+            </term>
+            <symbol > &amp; </symbol>
+            <term>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=paddleRight type=int kind=Var index=2 used> paddleRight </identifier>
+                </term>
+                <symbol > &lt; </symbol>
+                <term>
+                  <integerConstant > 510 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <doStatement>
+              <keyword > do </keyword>
+              <identifier class, used> paddle </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> moveRight </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+              <symbol > ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol > } </symbol>
+        </ifStatement>
+        <doStatement>
+          <keyword > do </keyword>
+          <identifier class, used> paddle </identifier>
+          <symbol > . </symbol>
+          <identifier function, used> draw </identifier>
+          <symbol > ( </symbol>
+          <symbol > ) </symbol>
+          <symbol > ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> chackBallPaddleCol </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=paddleLeft type=int kind=Var index=0 declared> paddleLeft </identifier>
+        <symbol > , </symbol>
+        <identifier name=paddleRight type=int kind=Var index=1 declared> paddleRight </identifier>
+        <symbol > , </symbol>
+        <identifier name=paddleTop type=int kind=Var index=2 declared> paddleTop </identifier>
+        <symbol > , </symbol>
+        <identifier name=paddleBottom type=int kind=Var index=3 declared> paddleBottom </identifier>
+        <symbol > , </symbol>
+        <identifier name=paddleMiddle type=int kind=Var index=4 declared> paddleMiddle </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=bLeft type=int kind=Var index=5 declared> bLeft </identifier>
+        <symbol > , </symbol>
+        <identifier name=bRight type=int kind=Var index=6 declared> bRight </identifier>
+        <symbol > , </symbol>
+        <identifier name=bTop type=int kind=Var index=7 declared> bTop </identifier>
+        <symbol > , </symbol>
+        <identifier name=bBottom type=int kind=Var index=8 declared> bBottom </identifier>
+        <symbol > , </symbol>
+        <identifier name=bMiddle type=int kind=Var index=9 declared> bMiddle </identifier>
+        <symbol > , </symbol>
+        <identifier name=bVspeed type=int kind=Var index=10 declared> bVspeed </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=paddleLeft type=int kind=Var index=0 used> paddleLeft </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> paddle </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getLeft </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=paddleRight type=int kind=Var index=1 used> paddleRight </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> paddle </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getRight </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=paddleTop type=int kind=Var index=2 used> paddleTop </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> paddle </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getTop </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=paddleBottom type=int kind=Var index=3 used> paddleBottom </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> paddle </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getBottom </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=paddleMiddle type=int kind=Var index=4 used> paddleMiddle </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=paddleRight type=int kind=Var index=1 used> paddleRight </identifier>
+                </term>
+                <symbol > + </symbol>
+                <term>
+                  <identifier name=paddleLeft type=int kind=Var index=0 used> paddleLeft </identifier>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+            </term>
+            <symbol > / </symbol>
+            <term>
+              <integerConstant > 2 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bLeft type=int kind=Var index=5 used> bLeft </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getLeft </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bRight type=int kind=Var index=6 used> bRight </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getRight </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bTop type=int kind=Var index=7 used> bTop </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getTop </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bBottom type=int kind=Var index=8 used> bBottom </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getBottom </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bMiddle type=int kind=Var index=9 used> bMiddle </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=bRight type=int kind=Var index=6 used> bRight </identifier>
+                </term>
+                <symbol > + </symbol>
+                <term>
+                  <identifier name=bLeft type=int kind=Var index=5 used> bLeft </identifier>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+            </term>
+            <symbol > / </symbol>
+            <term>
+              <integerConstant > 2 </integerConstant>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bVspeed type=int kind=Var index=10 used> bVspeed </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getVspeed </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <ifStatement>
+          <keyword > if </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=bLeft type=int kind=Var index=5 used> bLeft </identifier>
+                </term>
+                <symbol > &gt; </symbol>
+                <term>
+                  <identifier name=paddleLeft type=int kind=Var index=0 used> paddleLeft </identifier>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+            </term>
+            <symbol > &amp; </symbol>
+            <term>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=bRight type=int kind=Var index=6 used> bRight </identifier>
+                </term>
+                <symbol > &lt; </symbol>
+                <term>
+                  <identifier name=paddleRight type=int kind=Var index=1 used> paddleRight </identifier>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <ifStatement>
+              <keyword > if </keyword>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <symbol > ( </symbol>
+                  <expression>
+                    <term>
+                      <identifier name=bBottom type=int kind=Var index=8 used> bBottom </identifier>
+                    </term>
+                    <symbol > &gt; </symbol>
+                    <term>
+                      <identifier name=paddleTop type=int kind=Var index=2 used> paddleTop </identifier>
+                    </term>
+                  </expression>
+                  <symbol > ) </symbol>
+                </term>
+                <symbol > &amp; </symbol>
+                <term>
+                  <symbol > ( </symbol>
+                  <expression>
+                    <term>
+                      <identifier name=bVspeed type=int kind=Var index=10 used> bVspeed </identifier>
+                    </term>
+                    <symbol > &gt; </symbol>
+                    <term>
+                      <integerConstant > 0 </integerConstant>
+                    </term>
+                  </expression>
+                  <symbol > ) </symbol>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+              <symbol > { </symbol>
+              <statements>
+                <ifStatement>
+                  <keyword > if </keyword>
+                  <symbol > ( </symbol>
+                  <expression>
+                    <term>
+                      <identifier name=bMiddle type=int kind=Var index=9 used> bMiddle </identifier>
+                    </term>
+                    <symbol > &gt; </symbol>
+                    <term>
+                      <identifier name=paddleMiddle type=int kind=Var index=4 used> paddleMiddle </identifier>
+                    </term>
+                  </expression>
+                  <symbol > ) </symbol>
+                  <symbol > { </symbol>
+                  <statements>
+                    <doStatement>
+                      <keyword > do </keyword>
+                      <identifier class, used> ball </identifier>
+                      <symbol > . </symbol>
+                      <identifier function, used> setSpeed </identifier>
+                      <symbol > ( </symbol>
+                      <symbol > ) </symbol>
+                      <symbol > ; </symbol>
+                    </doStatement>
+                  </statements>
+                  <symbol > } </symbol>
+                  <keyword > else </keyword>
+                  <symbol > { </symbol>
+                  <statements>
+                    <doStatement>
+                      <keyword > do </keyword>
+                      <identifier class, used> ball </identifier>
+                      <symbol > . </symbol>
+                      <identifier function, used> setSpeed </identifier>
+                      <symbol > ( </symbol>
+                      <symbol > ) </symbol>
+                      <symbol > ; </symbol>
+                    </doStatement>
+                  </statements>
+                  <symbol > } </symbol>
+                </ifStatement>
+              </statements>
+              <symbol > } </symbol>
+            </ifStatement>
+          </statements>
+          <symbol > } </symbol>
+        </ifStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword > void </keyword>
+    <identifier subroutine, defined> checkBallBricksCol </identifier>
+    <symbol > ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol > ) </symbol>
+    <subroutineBody>
+      <symbol > { </symbol>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=brLeft type=int kind=Var index=0 declared> brLeft </identifier>
+        <symbol > , </symbol>
+        <identifier name=brRight type=int kind=Var index=1 declared> brRight </identifier>
+        <symbol > , </symbol>
+        <identifier name=brTop type=int kind=Var index=2 declared> brTop </identifier>
+        <symbol > , </symbol>
+        <identifier name=brBottom type=int kind=Var index=3 declared> brBottom </identifier>
+        <symbol > , </symbol>
+        <identifier name=brHidden type=int kind=Var index=4 declared> brHidden </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=bLeft type=int kind=Var index=5 declared> bLeft </identifier>
+        <symbol > , </symbol>
+        <identifier name=bRight type=int kind=Var index=6 declared> bRight </identifier>
+        <symbol > , </symbol>
+        <identifier name=bTop type=int kind=Var index=7 declared> bTop </identifier>
+        <symbol > , </symbol>
+        <identifier name=bBottom type=int kind=Var index=8 declared> bBottom </identifier>
+        <symbol > , </symbol>
+        <identifier name=bVspeed type=int kind=Var index=9 declared> bVspeed </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=overlapLeft type=int kind=Var index=10 declared> overlapLeft </identifier>
+        <symbol > , </symbol>
+        <identifier name=overlapRight type=int kind=Var index=11 declared> overlapRight </identifier>
+        <symbol > , </symbol>
+        <identifier name=overlapTop type=int kind=Var index=12 declared> overlapTop </identifier>
+        <symbol > , </symbol>
+        <identifier name=overlapBottom type=int kind=Var index=13 declared> overlapBottom </identifier>
+        <symbol > , </symbol>
+        <identifier name=fromLeft type=int kind=Var index=14 declared> fromLeft </identifier>
+        <symbol > , </symbol>
+        <identifier name=fromTop type=int kind=Var index=15 declared> fromTop </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=minOverlapX type=int kind=Var index=16 declared> minOverlapX </identifier>
+        <symbol > , </symbol>
+        <identifier name=minOverlapY type=int kind=Var index=17 declared> minOverlapY </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <varDec>
+        <keyword > var </keyword>
+        <keyword > int </keyword>
+        <identifier name=i type=int kind=Var index=18 declared> i </identifier>
+        <symbol > , </symbol>
+        <identifier name=end type=int kind=Var index=19 declared> end </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <varDec>
+        <keyword > var </keyword>
+        <identifier > Rect </identifier>
+        <identifier name=brick type=Rect kind=Var index=20 declared> brick </identifier>
+        <symbol > ; </symbol>
+      </varDec>
+      <statements>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bLeft type=int kind=Var index=5 used> bLeft </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getLeft </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bRight type=int kind=Var index=6 used> bRight </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getRight </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bTop type=int kind=Var index=7 used> bTop </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getTop </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bBottom type=int kind=Var index=8 used> bBottom </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getBottom </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=bVspeed type=int kind=Var index=9 used> bVspeed </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier class, used> ball </identifier>
+              <symbol > . </symbol>
+              <identifier function, used> getVspeed </identifier>
+              <symbol > ( </symbol>
+              <symbol > ) </symbol>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword > let </keyword>
+          <identifier name=end type=int kind=Var index=19 used> end </identifier>
+          <symbol > = </symbol>
+          <expression>
+            <term>
+              <identifier name=hbricks type=int kind=Field index=0 used> hbricks </identifier>
+            </term>
+            <symbol > * </symbol>
+            <term>
+              <identifier name=vbricks type=int kind=Field index=1 used> vbricks </identifier>
+            </term>
+          </expression>
+          <symbol > ; </symbol>
+        </letStatement>
+        <whileStatement>
+          <keyword > while </keyword>
+          <symbol > ( </symbol>
+          <expression>
+            <term>
+              <identifier name=i type=int kind=Var index=18 used> i </identifier>
+            </term>
+            <symbol > &lt; </symbol>
+            <term>
+              <identifier name=end type=int kind=Var index=19 used> end </identifier>
+            </term>
+          </expression>
+          <symbol > ) </symbol>
+          <symbol > { </symbol>
+          <statements>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=brick type=Rect kind=Var index=20 used> brick </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <symbol > [ </symbol>
+                  <expression>
+                    <term>
+                      <identifier name=i type=int kind=Var index=18 used> i </identifier>
+                    </term>
+                  </expression>
+                  <symbol > ] </symbol>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=brLeft type=int kind=Var index=0 used> brLeft </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <identifier class, used> brick </identifier>
+                  <symbol > . </symbol>
+                  <identifier function, used> getLeft </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=brRight type=int kind=Var index=1 used> brRight </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <identifier class, used> brick </identifier>
+                  <symbol > . </symbol>
+                  <identifier function, used> getRight </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=brTop type=int kind=Var index=2 used> brTop </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <identifier class, used> brick </identifier>
+                  <symbol > . </symbol>
+                  <identifier function, used> getTop </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=brBottom type=int kind=Var index=3 used> brBottom </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <identifier class, used> brick </identifier>
+                  <symbol > . </symbol>
+                  <identifier function, used> getBottom </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=brHidden type=int kind=Var index=4 used> brHidden </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <identifier class, used> brick </identifier>
+                  <symbol > . </symbol>
+                  <identifier function, used> getHidden </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+            <ifStatement>
+              <keyword > if </keyword>
+              <symbol > ( </symbol>
+              <expression>
+                <term>
+                  <identifier name=brHidden type=int kind=Var index=4 used> brHidden </identifier>
+                </term>
+                <symbol > &lt; </symbol>
+                <term>
+                  <integerConstant > 1 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ) </symbol>
+              <symbol > { </symbol>
+              <statements>
+                <doStatement>
+                  <keyword > do </keyword>
+                  <identifier class, used> brick </identifier>
+                  <symbol > . </symbol>
+                  <identifier function, used> draw </identifier>
+                  <symbol > ( </symbol>
+                  <symbol > ) </symbol>
+                  <symbol > ; </symbol>
+                </doStatement>
+                <ifStatement>
+                  <keyword > if </keyword>
+                  <symbol > ( </symbol>
+                  <expression>
+                    <term>
+                      <symbol > ( </symbol>
+                      <expression>
+                        <term>
+                          <identifier name=bLeft type=int kind=Var index=5 used> bLeft </identifier>
+                        </term>
+                        <symbol > &gt; </symbol>
+                        <term>
+                          <identifier name=brLeft type=int kind=Var index=0 used> brLeft </identifier>
+                        </term>
+                      </expression>
+                      <symbol > ) </symbol>
+                    </term>
+                    <symbol > &amp; </symbol>
+                    <term>
+                      <symbol > ( </symbol>
+                      <expression>
+                        <term>
+                          <identifier name=bRight type=int kind=Var index=6 used> bRight </identifier>
+                        </term>
+                        <symbol > &lt; </symbol>
+                        <term>
+                          <identifier name=brRight type=int kind=Var index=1 used> brRight </identifier>
+                        </term>
+                      </expression>
+                      <symbol > ) </symbol>
+                    </term>
+                  </expression>
+                  <symbol > ) </symbol>
+                  <symbol > { </symbol>
+                  <statements>
+                    <ifStatement>
+                      <keyword > if </keyword>
+                      <symbol > ( </symbol>
+                      <expression>
+                        <term>
+                          <symbol > ( </symbol>
+                          <expression>
+                            <term>
+                              <identifier name=bBottom type=int kind=Var index=8 used> bBottom </identifier>
+                            </term>
+                            <symbol > &gt; </symbol>
+                            <term>
+                              <identifier name=brTop type=int kind=Var index=2 used> brTop </identifier>
+                            </term>
+                          </expression>
+                          <symbol > ) </symbol>
+                        </term>
+                        <symbol > &amp; </symbol>
+                        <term>
+                          <symbol > ( </symbol>
+                          <expression>
+                            <term>
+                              <identifier name=bTop type=int kind=Var index=7 used> bTop </identifier>
+                            </term>
+                            <symbol > &lt; </symbol>
+                            <term>
+                              <identifier name=brBottom type=int kind=Var index=3 used> brBottom </identifier>
+                            </term>
+                          </expression>
+                          <symbol > ) </symbol>
+                        </term>
+                      </expression>
+                      <symbol > ) </symbol>
+                      <symbol > { </symbol>
+                      <statements>
+                        <doStatement>
+                          <keyword > do </keyword>
+                          <identifier class, used> brick </identifier>
+                          <symbol > . </symbol>
+                          <identifier function, used> setHidden </identifier>
+                          <symbol > ( </symbol>
+                          <symbol > ) </symbol>
+                          <symbol > ; </symbol>
+                        </doStatement>
+                        <doStatement>
+                          <keyword > do </keyword>
+                          <identifier class, used> brick </identifier>
+                          <symbol > . </symbol>
+                          <identifier function, used> draw </identifier>
+                          <symbol > ( </symbol>
+                          <symbol > ) </symbol>
+                          <symbol > ; </symbol>
+                        </doStatement>
+                        <letStatement>
+                          <keyword > let </keyword>
+                          <identifier name=overlapLeft type=int kind=Var index=10 used> overlapLeft </identifier>
+                          <symbol > = </symbol>
+                          <expression>
+                            <term>
+                              <identifier name=bRight type=int kind=Var index=6 used> bRight </identifier>
+                            </term>
+                            <symbol > - </symbol>
+                            <term>
+                              <identifier name=brLeft type=int kind=Var index=0 used> brLeft </identifier>
+                            </term>
+                          </expression>
+                          <symbol > ; </symbol>
+                        </letStatement>
+                        <letStatement>
+                          <keyword > let </keyword>
+                          <identifier name=overlapRight type=int kind=Var index=11 used> overlapRight </identifier>
+                          <symbol > = </symbol>
+                          <expression>
+                            <term>
+                              <identifier name=brRight type=int kind=Var index=1 used> brRight </identifier>
+                            </term>
+                            <symbol > - </symbol>
+                            <term>
+                              <identifier name=bLeft type=int kind=Var index=5 used> bLeft </identifier>
+                            </term>
+                          </expression>
+                          <symbol > ; </symbol>
+                        </letStatement>
+                        <letStatement>
+                          <keyword > let </keyword>
+                          <identifier name=overlapTop type=int kind=Var index=12 used> overlapTop </identifier>
+                          <symbol > = </symbol>
+                          <expression>
+                            <term>
+                              <identifier name=bBottom type=int kind=Var index=8 used> bBottom </identifier>
+                            </term>
+                            <symbol > - </symbol>
+                            <term>
+                              <identifier name=brTop type=int kind=Var index=2 used> brTop </identifier>
+                            </term>
+                          </expression>
+                          <symbol > ; </symbol>
+                        </letStatement>
+                        <letStatement>
+                          <keyword > let </keyword>
+                          <identifier name=overlapBottom type=int kind=Var index=13 used> overlapBottom </identifier>
+                          <symbol > = </symbol>
+                          <expression>
+                            <term>
+                              <identifier name=brBottom type=int kind=Var index=3 used> brBottom </identifier>
+                            </term>
+                            <symbol > - </symbol>
+                            <term>
+                              <identifier name=bTop type=int kind=Var index=7 used> bTop </identifier>
+                            </term>
+                          </expression>
+                          <symbol > ; </symbol>
+                        </letStatement>
+                        <ifStatement>
+                          <keyword > if </keyword>
+                          <symbol > ( </symbol>
+                          <expression>
+                            <term>
+                              <identifier class, used> Util </identifier>
+                              <symbol > . </symbol>
+                              <identifier function, used> abs </identifier>
+                              <symbol > ( </symbol>
+                              <symbol > ) </symbol>
+                            </term>
+                            <symbol > &lt; </symbol>
+                            <term>
+                              <identifier class, used> Util </identifier>
+                              <symbol > . </symbol>
+                              <identifier function, used> abs </identifier>
+                              <symbol > ( </symbol>
+                              <symbol > ) </symbol>
+                            </term>
+                          </expression>
+                          <symbol > ) </symbol>
+                          <symbol > { </symbol>
+                          <statements>
+                            <letStatement>
+                              <keyword > let </keyword>
+                              <identifier name=fromLeft type=int kind=Var index=14 used> fromLeft </identifier>
+                              <symbol > = </symbol>
+                              <expression>
+                                <term>
+                                  <integerConstant > 1 </integerConstant>
+                                </term>
+                              </expression>
+                              <symbol > ; </symbol>
+                            </letStatement>
+                            <letStatement>
+                              <keyword > let </keyword>
+                              <identifier name=minOverlapX type=int kind=Var index=16 used> minOverlapX </identifier>
+                              <symbol > = </symbol>
+                              <expression>
+                                <term>
+                                  <identifier name=overlapLeft type=int kind=Var index=10 used> overlapLeft </identifier>
+                                </term>
+                              </expression>
+                              <symbol > ; </symbol>
+                            </letStatement>
+                          </statements>
+                          <symbol > } </symbol>
+                          <keyword > else </keyword>
+                          <symbol > { </symbol>
+                          <statements>
+                            <letStatement>
+                              <keyword > let </keyword>
+                              <identifier name=minOverlapX type=int kind=Var index=16 used> minOverlapX </identifier>
+                              <symbol > = </symbol>
+                              <expression>
+                                <term>
+                                  <identifier name=overlapRight type=int kind=Var index=11 used> overlapRight </identifier>
+                                </term>
+                              </expression>
+                              <symbol > ; </symbol>
+                            </letStatement>
+                          </statements>
+                          <symbol > } </symbol>
+                        </ifStatement>
+                        <ifStatement>
+                          <keyword > if </keyword>
+                          <symbol > ( </symbol>
+                          <expression>
+                            <term>
+                              <identifier class, used> Util </identifier>
+                              <symbol > . </symbol>
+                              <identifier function, used> abs </identifier>
+                              <symbol > ( </symbol>
+                              <symbol > ) </symbol>
+                            </term>
+                            <symbol > &lt; </symbol>
+                            <term>
+                              <identifier class, used> Util </identifier>
+                              <symbol > . </symbol>
+                              <identifier function, used> abs </identifier>
+                              <symbol > ( </symbol>
+                              <symbol > ) </symbol>
+                            </term>
+                          </expression>
+                          <symbol > ) </symbol>
+                          <symbol > { </symbol>
+                          <statements>
+                            <letStatement>
+                              <keyword > let </keyword>
+                              <identifier name=fromTop type=int kind=Var index=15 used> fromTop </identifier>
+                              <symbol > = </symbol>
+                              <expression>
+                                <term>
+                                  <integerConstant > 1 </integerConstant>
+                                </term>
+                              </expression>
+                              <symbol > ; </symbol>
+                            </letStatement>
+                            <letStatement>
+                              <keyword > let </keyword>
+                              <identifier name=minOverlapY type=int kind=Var index=17 used> minOverlapY </identifier>
+                              <symbol > = </symbol>
+                              <expression>
+                                <term>
+                                  <identifier name=overlapTop type=int kind=Var index=12 used> overlapTop </identifier>
+                                </term>
+                              </expression>
+                              <symbol > ; </symbol>
+                            </letStatement>
+                          </statements>
+                          <symbol > } </symbol>
+                          <keyword > else </keyword>
+                          <symbol > { </symbol>
+                          <statements>
+                            <letStatement>
+                              <keyword > let </keyword>
+                              <identifier name=minOverlapY type=int kind=Var index=17 used> minOverlapY </identifier>
+                              <symbol > = </symbol>
+                              <expression>
+                                <term>
+                                  <identifier name=overlapBottom type=int kind=Var index=13 used> overlapBottom </identifier>
+                                </term>
+                              </expression>
+                              <symbol > ; </symbol>
+                            </letStatement>
+                          </statements>
+                          <symbol > } </symbol>
+                        </ifStatement>
+                        <ifStatement>
+                          <keyword > if </keyword>
+                          <symbol > ( </symbol>
+                          <expression>
+                            <term>
+                              <identifier class, used> Util </identifier>
+                              <symbol > . </symbol>
+                              <identifier function, used> abs </identifier>
+                              <symbol > ( </symbol>
+                              <symbol > ) </symbol>
+                            </term>
+                            <symbol > &lt; </symbol>
+                            <term>
+                              <identifier class, used> Util </identifier>
+                              <symbol > . </symbol>
+                              <identifier function, used> abs </identifier>
+                              <symbol > ( </symbol>
+                              <symbol > ) </symbol>
+                            </term>
+                          </expression>
+                          <symbol > ) </symbol>
+                          <symbol > { </symbol>
+                          <statements>
+                            <doStatement>
+                              <keyword > do </keyword>
+                              <identifier class, used> ball </identifier>
+                              <symbol > . </symbol>
+                              <identifier function, used> invertHspeed </identifier>
+                              <symbol > ( </symbol>
+                              <symbol > ) </symbol>
+                              <symbol > ; </symbol>
+                            </doStatement>
+                          </statements>
+                          <symbol > } </symbol>
+                          <keyword > else </keyword>
+                          <symbol > { </symbol>
+                          <statements>
+                            <doStatement>
+                              <keyword > do </keyword>
+                              <identifier class, used> ball </identifier>
+                              <symbol > . </symbol>
+                              <identifier function, used> invertVspeed </identifier>
+                              <symbol > ( </symbol>
+                              <symbol > ) </symbol>
+                              <symbol > ; </symbol>
+                            </doStatement>
+                          </statements>
+                          <symbol > } </symbol>
+                        </ifStatement>
+                      </statements>
+                      <symbol > } </symbol>
+                    </ifStatement>
+                  </statements>
+                  <symbol > } </symbol>
+                </ifStatement>
+              </statements>
+              <symbol > } </symbol>
+            </ifStatement>
+            <letStatement>
+              <keyword > let </keyword>
+              <identifier name=i type=int kind=Var index=18 used> i </identifier>
+              <symbol > = </symbol>
+              <expression>
+                <term>
+                  <identifier name=i type=int kind=Var index=18 used> i </identifier>
+                </term>
+                <symbol > + </symbol>
+                <term>
+                  <integerConstant > 1 </integerConstant>
+                </term>
+              </expression>
+              <symbol > ; </symbol>
+            </letStatement>
+          </statements>
+          <symbol > } </symbol>
+        </whileStatement>
+        <returnStatement>
+          <keyword > return </keyword>
+          <symbol > ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol > } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <symbol > } </symbol>
+</class>
